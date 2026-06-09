@@ -1,23 +1,20 @@
 import React from 'react';
 import stackImage from '../assets/about/image.png';
-import reactImage from '../assets/about/react.png';
-import nodeImage from '../assets/about/node.png';
-import mongoImage from '../assets/about/mongodb.png';
 
 const About = () => {
   return (
     <section className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 w-full relative overflow-hidden font-sans">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start">
-        
-        {/* Left Side: ID Badge and Skills */}
+
+        {/* Left Side: ID Badge */}
         <div className="flex flex-col items-center w-full md:w-[350px] shrink-0 mt-12 md:mt-0">
-          
+
           <div data-aos="drop-bounce" className="relative flex justify-center w-full">
             {/* Lanyard string */}
             <div className="absolute -top-32 left-1/2 w-3 h-40 bg-black transform -translate-x-1/2 shadow-inner z-0"></div>
             {/* Lanyard clip */}
             <div className="absolute -top-6 left-1/2 w-6 h-12 bg-gray-300 rounded border border-gray-400 transform -translate-x-1/2 z-10 shadow-[0_2px_10px_rgba(0,0,0,0.3)]"></div>
-            
+
             {/* Badge Card */}
             <div className="bg-gray-900 w-full max-w-[280px] rounded-2xl p-3 shadow-[0_20px_40px_rgba(0,0,0,0.4)] relative z-20 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
               {/* Cutout Hole */}
@@ -26,9 +23,9 @@ const About = () => {
               </div>
               {/* Image Container */}
               <div className="w-full aspect-[3/4] overflow-hidden rounded-xl bg-gray-800 border-2 border-transparent">
-                <img 
-                  src={stackImage} 
-                  alt="Profile" 
+                <img
+                  src={stackImage}
+                  alt="Profile"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -39,32 +36,49 @@ const About = () => {
 
         {/* Right Side: Info Content */}
         <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
-          
-          <h2 className="text-4xl md:text-5xl font-black text-black mb-4">Hello!</h2>
-          <p className="text-lg font-bold mb-12 leading-relaxed max-w-3xl text-red-50">
-            Hi, my name is <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">Leeshark</span>, a passionate full-stack developer based in [Location], dedicated to crafting clean, functional, and highly scalable web applications.
-          </p>
 
-          {/* Horizontal Skills Row (Transparent & Large) */}
-          <div className="flex items-center gap-10 mt-8">
-            <img 
-              data-aos="zoom-in" data-aos-delay="300"
-              src={reactImage} 
-              alt="React" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
-            <img 
-              data-aos="zoom-in" data-aos-delay="450"
-              src={nodeImage} 
-              alt="Node.js" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
-            <img 
-              data-aos="zoom-in" data-aos-delay="600"
-              src={mongoImage} 
-              alt="MongoDB" 
-              className="w-20 h-20 md:w-24 md:h-24 object-contain hover:scale-110 transition-transform duration-300 cursor-pointer drop-shadow-2xl" 
-            />
+          <h2 className="text-4xl md:text-5xl font-black text-black mb-4">Hello!</h2>
+          <p className="text-lg font-bold mb-10 leading-relaxed max-w-3xl text-red-50">
+            Hi, my name is <span className="text-black text-xl font-black mx-1 tracking-wide uppercase">Sejal Kamble</span>, a passionate full-stack developer based in Maharashtra, India. My goal is to build meaningful products that make technology more accessible while continuously learning, creating, and contributing to the developer community.          </p>
+
+          {/* Education Block */}
+          <div className="flex flex-col gap-4">
+            {/* University Card */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-5 flex flex-col gap-1 hover:bg-black/30 transition-colors duration-300"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <svg className="w-4 h-4 text-white/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                </svg>
+                <span className="text-white/50 text-[10px] font-bold uppercase tracking-widest font-mono">B.Tech · Computer Science Engineering</span>
+              </div>
+              <p className="text-white font-black text-sm leading-snug">The Karmavir Dadasaheb Kannamwar College of Engineering, Nagpur</p>
+              <p className="text-white/60 text-xs font-medium mt-0.5">Aug 2023 – Present</p>
+            </div>
+
+            {/* School Card */}
+            <div
+              data-aos="fade-up"
+              data-aos-delay="450"
+              className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-2xl p-5 flex flex-col gap-1 hover:bg-black/30 transition-colors duration-300"
+            >
+              <div className="flex items-center gap-2 mb-1">
+                <svg className="w-4 h-4 text-white/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+                <span className="text-white/50 text-[10px] font-bold uppercase tracking-widest font-mono">Higher Secondary</span>
+              </div>
+              <p className="text-white font-black text-sm leading-snug">Dinanath High School and Jr. College</p>
+              <div className="flex gap-5 mt-1.5">
+                <span className="text-white/60 text-xs font-medium">12th: <span className="text-white font-black">73%</span></span>
+                <span className="text-[#ff2a2a] text-xs font-medium">|</span>
+                <span className="text-white/60 text-xs font-medium">10th: <span className="text-white font-black">91.40%</span></span>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -79,10 +93,10 @@ const About = () => {
 
       {/* Decorative stars */}
       <div className="absolute top-10 right-10 md:right-20 text-black opacity-30 animate-pulse">
-        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z"/></svg>
+        <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z" /></svg>
       </div>
       <div className="absolute bottom-32 left-4 md:left-20 text-black opacity-30 animate-pulse" style={{ animationDelay: '1s' }}>
-        <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z"/></svg>
+        <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z" /></svg>
       </div>
     </section>
   );

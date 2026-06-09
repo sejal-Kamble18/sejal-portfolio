@@ -2,23 +2,43 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const Contact = () => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const firstName = e.target.firstName.value;
+    const lastName = e.target.lastName.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+
+    const subject = encodeURIComponent(
+      `Portfolio Contact from ${firstName} ${lastName}`
+    );
+
+    const body = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    window.location.href =
+      `mailto:ksejal630@gmail.com?subject=${subject}&body=${body}`;
+  };
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
-  
+
   // Parallax translation for the big text
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "30%"]);
 
   return (
     <section ref={ref} id="contact" className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex items-end pt-32 pb-0 md:pb-0 border-t border-gray-900">
       {/* Huge Background Text */}
-      <motion.div 
+      <motion.div
         style={{ y }}
         className="absolute top-0 left-0 w-full h-full flex flex-col justify-start items-center overflow-hidden pointer-events-none z-0 pt-16 md:pt-12"
       >
-        <h1 
+        <h1
           className="text-[25vw] leading-[0.75] font-black text-white uppercase tracking-tighter select-none scale-y-[1.6] origin-top"
           style={{ fontFamily: "'Impact', 'Arial Black', sans-serif" }}
         >
@@ -28,7 +48,7 @@ const Contact = () => {
 
       {/* Form Card Overlay */}
       <div className="relative z-10 w-full flex justify-end items-end">
-        <div 
+        <div
           data-aos="fade-up"
           className="bg-[#ff2a2a] w-full md:w-[85%] lg:w-[75%] p-8 md:p-16 text-white flex flex-col justify-between"
         >
@@ -36,31 +56,37 @@ const Contact = () => {
             Reach Us
           </div>
 
-          <form className="flex flex-col gap-12 md:gap-16 w-full">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-12 md:gap-16 w-full"
+          >
             <div className="flex flex-col md:flex-row gap-12 md:gap-20 w-full">
               {/* Left Column */}
               <div className="flex-1 flex flex-col gap-10">
                 <div className="relative">
-                  <input 
-                    type="text" 
-                    id="firstName" 
-                    placeholder="First Name" 
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First Name"
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
                 <div className="relative">
-                  <input 
-                    type="text" 
-                    id="lastName" 
-                    placeholder="Last Name" 
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last Name"
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
                 <div className="relative">
-                  <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="Email" 
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium rounded-none"
                   />
                 </div>
@@ -69,9 +95,10 @@ const Contact = () => {
               {/* Right Column */}
               <div className="flex-1 flex flex-col">
                 <div className="relative h-full flex flex-col">
-                  <textarea 
-                    id="message" 
-                    placeholder="Type your message here" 
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Type your message here"
                     className="w-full h-full min-h-[120px] bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white font-medium resize-none rounded-none"
                   ></textarea>
                 </div>
@@ -82,10 +109,10 @@ const Contact = () => {
             <div className="flex flex-col md:flex-row gap-12 mt-4">
               {/* Left text */}
               <div className="flex-1 flex items-start gap-4 text-sm font-medium text-white/90">
-                <input 
-                  type="checkbox" 
-                  id="permission" 
-                  className="mt-1 w-4 h-4 rounded-sm border-white/40 bg-transparent text-white focus:ring-white focus:ring-offset-0 focus:ring-offset-transparent cursor-pointer" 
+                <input
+                  type="checkbox"
+                  id="permission"
+                  className="mt-1 w-4 h-4 rounded-sm border-white/40 bg-transparent text-white focus:ring-white focus:ring-offset-0 focus:ring-offset-transparent cursor-pointer"
                   style={{ accentColor: "white" }}
                 />
                 <label htmlFor="permission" className="cursor-pointer max-w-[280px] leading-snug">
@@ -102,9 +129,9 @@ const Contact = () => {
                   <p className="max-w-[250px] leading-relaxed">
                     For information on how to unsubscribe, please review our <a href="#" className="underline hover:text-white transition-colors">privacy policy</a>.
                   </p>
-                  
-                  <button 
-                    type="submit" 
+
+                  <button
+                    type="submit"
                     className="px-8 py-3 rounded-full border border-white/40 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#ff2a2a] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto"
                   >
                     Send

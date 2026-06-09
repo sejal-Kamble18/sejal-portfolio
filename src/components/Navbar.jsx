@@ -34,7 +34,7 @@ const Navbar = () => {
         {/* Left Side: Logo/Name */}
         <div className="flex items-center">
           <a href="#" className="text-white text-2xl font-black tracking-tight">
-            Leeshark<span className="text-red-500">.</span>
+            Sejal Kamble<span className="text-red-500">.</span>
           </a>
         </div>
 
